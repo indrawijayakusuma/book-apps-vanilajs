@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Bookshelf Apps</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  </head>
+  <body>
+    <header class="bg-gray-700 text-2xl text-white py-3">
+      <h1 class="font-semibold ml-8">Apps</h1>
+    </header>
+    <main class="text-gray-600">
+      <section
+        class="shadow-lg rounded-lg p-10 w-[80%] lg:w-[60%] mx-auto my-10"
+      >
+        <h2 class="text-center text-xl font-semibold">Masukkan Buku Baru</h2>
+        <form class="mt-4" id="inputBook">
+          <div class="flex flex-col gap-1">
+            <label class="font-semibold" for="inputBookTitle">Judul</label>
+            <input
+              placeholder="Masukan judul"
+              class="pl-2 border border-gray-400 rounded-lg py-3"
+              id="inputBookTitle"
+              type="text"
+              required
+            />
+          </div>
+          <div class="flex flex-col gap-1 mt-3">
+            <label class="font-semibold" for="inputBookAuthor">Penulis</label>
+            <input
+              placeholder="Masukan nama penulis"
+              class="border border-gray-400 rounded-lg pl-2 py-3"
+              id="inputBookAuthor"
+              type="text"
+              required
+            />
+          </div>
+          <div class="flex flex-col mt-3">
+            <label class="font-semibold" for="inputBookYear">Tahun</label>
+            <input
+              placeholder="Masukan tahun"
+              class="border border-gray-400 rounded-lg pl-2 py-3"
+              id="inputBookYear"
+              type="number"
+              required
+            />
+          </div>
+          <div class="mt-3">
+            <label class="font-semibold" for="inputBookIsComplete"
+              >Selesai dibaca</label
+            >
+            <input
+              class="border border-gray-400 rounded-md py-2"
+              id="inputBookIsComplete"
+              type="checkbox"
+            />
+          </div>
+          <button
+            class="flex m-auto bg-[#374151] text-white px-4 py-2 rounded-lg"
+            id="bookSubmit"
+            type="submit"
+          >
+            Masukkan Buku ke rak
+          </button>
+        </form>
+      </section>
+
+      <section class="w-[70%] mx-auto my-10">
+        <form id="searchBook" class="flex gap-3">
+          <input
+            placeholder="search judul"
+            class="border border-gray-400 rounded-lg pl-3 py-2 w-80"
+            id="searchBookTitle"
+            type="text"
+          />
+          <button
+            class="px-6 bg-[#374151] text-white rounded-md"
+            id="searchSubmit"
+            type="submit"
+          >
+            Cari
+          </button>
+        </form>
+      </section>
+
+      <section class="w-[70%] mx-auto my-10">
+        <h2 class="text-2xl">Belum selesai dibaca</h2>
+
+        <div
+          id="incompleteBookshelfList"
+          class="flex flex-row gap-5 w-max rounded-md"
+        ></div>
+      </section>
+
+      <section class="w-[70%] mx-auto my-10 mb-40">
+        <h2 class="text-2xl">Selesai dibaca</h2>
+
+        <div
+          id="completeBookshelfList"
+          class="flex flex-row gap-5 w-max rounded-md"
+        ></div>
+      </section>
+    </main>
+
+    <script src="main.js"></script>
+  </body>
+</html>
